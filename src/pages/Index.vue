@@ -6,6 +6,8 @@
       :todos="todos"
       :meta="meta"
     ></example-component>
+    
+    <test-component></test-component>
   </q-page>
 </template>
 
@@ -15,7 +17,10 @@ import ExampleComponent from 'components/ClassComponent.vue';
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component({
-  components: { ExampleComponent }
+  components: { 
+    ExampleComponent,
+    TestComponent: () => import('./test')
+  }
 })
 export default class PageIndex extends Vue {
   todos: Todo[] = [
@@ -43,5 +48,8 @@ export default class PageIndex extends Vue {
   meta: Meta = {
     totalCount: 1200
   };
+
+
+  
 };
 </script>
