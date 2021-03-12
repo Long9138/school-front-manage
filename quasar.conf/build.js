@@ -34,12 +34,24 @@ module.exports.build = configure(function () {
           .loader('html-loader')
           .end()
 
-          //配置别名，在项目中可缩减引用路径
-          config.resolve.alias
+        //配置別名，在項目中可縮減引用路徑
+        config.resolve.alias
           // 支持解析html模版
           .set('vue$', 'vue/dist/vue.js')
           // @ 符号表示 src
           .set('@', require('path').resolve(__dirname, '../src'))
+
+        // 注入全局scss变量
+        const oneOfsMap = config.module.rule('scss').oneOfs.store
+        oneOfsMap.forEach((item, index) => {
+          item
+            .use('sass-resources-loader')
+            .loader('sass-resources-loader')
+            .options({
+              resources: 'src/css/quasar.variables.scss'
+            })
+            .end()
+        })
       }
     }
   }
