@@ -3,18 +3,26 @@ import { RouteConfig } from 'vue-router';
 const routes: RouteConfig[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    name: 'global',
+    redirect: {
+      name: 'login'
+    },
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      // { path: '', component: () => import('@/views/pages/Index.vue') }
     ]
   },
 
   // Always leave this as last one,
   // but you can also remove it
   {
-    path: '*',
-    component: () => import('pages/Error404.vue')
+    path: '/login',
+    name:'login',
+    component: () => import('@/views/pages/login')
   }
+  // {
+  //   path: '*',
+  //   component: () => import('@/views/pages/Error404.vue')
+  // }
 ];
 
 export default routes;

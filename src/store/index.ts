@@ -19,14 +19,15 @@ export interface StateInterface {
 export default store(function ({ Vue }) {
   Vue.use(Vuex);
 
-  const Store = new Vuex.Store<StateInterface>({
+  const Store = new Vuex.Store({
+    state:{},
     modules: {
       // example
     },
 
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: !!process.env.DEBUGGING
+    // strict: !!process.env.DEBUGGING
   });
 
   return Store;

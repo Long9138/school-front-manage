@@ -1,11 +1,10 @@
 import { Vue, Component } from "vue-property-decorator";
-import './index.scss';
 
 @Component({
-  name: "test",
+  name: 'layoutHeader',
   template: require("./index.html")
 })
-export default class TestComponent extends Vue {
+export default class LayoutHeader extends Vue {
 
   /** 常量 */
   // @Prop / @Inject / @State / @Getter ...
@@ -14,6 +13,11 @@ export default class TestComponent extends Vue {
   /** 变量 */
   // @PropSync / @Ref ...
 
+
+  // 构造器
+  constructor() {
+    super();
+  }
 
   /** 私用方法 */
   // @Watch / @Emit ...
@@ -40,7 +44,4 @@ export default class TestComponent extends Vue {
 
   // 生命销毁时
   destroyed() { }
-
-  // 构造器
-  constructor() { super() }
 }

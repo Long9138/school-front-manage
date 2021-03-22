@@ -3,14 +3,15 @@ import VueRouter from 'vue-router';
 import { Store } from "vuex";
 import { StateInterface } from '../store';
 import routes from './routes';
+import Vue from 'vue'
 
 /*
  * If not building with SSR mode, you can
  * directly export the Router instantiation
  */
-
+Vue.use(VueRouter);
 export default route<Store<StateInterface>>(function ({ Vue }) {
-  Vue.use(VueRouter);
+  
 
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),

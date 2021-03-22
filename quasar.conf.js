@@ -29,6 +29,14 @@ module.exports = configure(function (/* ctx */) {
       'app.scss'
     ],
 
+    // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-sourceFiles
+    sourceFiles: {
+      rootComponent: 'src/index.ts',
+      router: 'src/router/index.ts',
+      store: 'src/store/index.ts',
+      indexHtmlTemplate: 'src/template/index.template.html'
+    },
+
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
@@ -62,7 +70,7 @@ module.exports = configure(function (/* ctx */) {
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
       // * 'all'  - Manually specify what to import
-      importStrategy: 'auto',
+      importStrategy: 'all',
 
       // For special cases outside of where "auto" importStrategy can have an impact
       // (like functional components as one of the examples),
