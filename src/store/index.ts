@@ -17,7 +17,7 @@ export interface StateInterface {
 }
 
 export default store(function ({ Vue }) {
-  Vue.use(Vuex);
+  Vue.use(Vuex as any);
 
   const Store = new Vuex.Store({
     state:{},
