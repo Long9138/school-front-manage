@@ -7,6 +7,7 @@ const routes: RouteConfig[] = [
     redirect: {
       name: 'login'
     },
+    component: () => import('@/views/pages/index'),
     children: [
       // { path: '', component: () => import('@/views/pages/Index.vue') }
     ]
@@ -18,6 +19,11 @@ const routes: RouteConfig[] = [
     path: '/login',
     name:'login',
     component: () => import('@/views/pages/login')
+  },
+  {
+    path: '/test',
+    name:'test',
+    component: () => import('@/views/pages/test')
   }
   // {
   //   path: '*',

@@ -58,7 +58,21 @@ module.exports = configure(function (/* ctx */) {
     devServer: {
       https: false,
       port: 8080,
-      open: true // opens browser window automatically
+      open: false, // opens browser window automatically
+      // host: require('ip').address(),
+      // proxy: {
+      //   // '/static': 'http://172.30.21.191:8080/',
+      //   // '/dst_api': 'http://172.30.21.190:16666/'
+      //   // '/api': 'http://172.30.21.191:8080/'
+      //   '/api': {
+      //     target: 'http://172.30.21.191:8080/',
+      //     changeOrigin: true,
+      //     secure: false,
+      //     pathRewrite: {
+      //       '^/api': ''
+      //     }
+      //   }
+      // }
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework

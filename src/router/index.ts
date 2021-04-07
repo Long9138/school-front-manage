@@ -24,5 +24,10 @@ export default route<Store<StateInterface>>(function ({ Vue }) {
     base: process.env.VUE_ROUTER_BASE
   });
 
+  // 路由钩子
+  Router.beforeEach((to, form, next) => {
+    next()
+  })
+
   return Router;
 })

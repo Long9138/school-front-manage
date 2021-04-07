@@ -21,7 +21,7 @@ module.exports.build = configure(function () {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/handling-webpack
-      publicPath: '', // 部署时的公共路径
+      publicPath: 'dst', // 部署时的公共路径
       extractCSS: true, // 从Vue文件中提取CSS
       // https://quasar.dev/quasar-cli/handling-webpack
       chainWebpack: config => {
