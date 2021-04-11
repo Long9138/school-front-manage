@@ -26,7 +26,6 @@ module.exports.build = configure(function () {
       extractCSS: true, // 从Vue文件中提取CSS
       // https://quasar.dev/quasar-cli/handling-webpack
       chainWebpack: config => {
-        debugger
         // 解析HTML模板
         config.module
           .rule('html')
