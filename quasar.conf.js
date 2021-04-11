@@ -59,7 +59,7 @@ module.exports = configure(function (/* ctx */) {
       https: false,
       port: 8080,
       open: false, // opens browser window automatically
-      // host: require('ip').address(),
+      host: require('ip').address(),
       // proxy: {
       //   // '/static': 'http://172.30.21.191:8080/',
       //   // '/dst_api': 'http://172.30.21.190:16666/'
