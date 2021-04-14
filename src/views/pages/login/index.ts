@@ -1,10 +1,16 @@
 import { Vue, Component } from "vue-property-decorator";
+import { getCourese } from '@/api/course.js'
+import { compileToFunctions } from "vue-template-compiler";
+import { connect } from "http2";
 
 @Component({
   name: 'login',
   template: require("./index.html"),
   components: {
     LayoutHeader: () => import('src/layouts/header')
+  },
+  filters: {
+    
   }
 })
 export default class Login extends Vue {
@@ -15,7 +21,7 @@ export default class Login extends Vue {
 
   /** 变量 */
   // @PropSync / @Ref ...
-
+  test = ''
 
   // 构造器
   constructor() {
@@ -29,12 +35,27 @@ export default class Login extends Vue {
   /** 公共方法 */
   // @Provide / @Action / @Mutation ...
 
+  testFunc() {
+    return new Promise((resolve, resject) => {
+      resject(123)
+    })
+  }
+  method() {
+    console.log('123')
+  }
 
   // 生命构造之前
   beforeCreate() { }
 
   // 生命构造时
-  created() { }
+  async created() {
+    // const courses = await getCourese()
+    // console.log(courses)
+    // let result = await this.testFunc()
+    // console.log(result)
+    // 创建构造器
+
+  }
 
   // 生命挂载之前
   beforeMount() { }

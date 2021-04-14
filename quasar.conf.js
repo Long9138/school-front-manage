@@ -73,6 +73,11 @@ module.exports = configure(function (/* ctx */) {
       //     }
       //   }
       // }
+      before(app) {
+        app.get('/api/courses',(req,res) => {
+          res.json([{name:'web全栈',price:8999},{name:'web高级',price:6999}])
+        })
+      }
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
