@@ -1,10 +1,10 @@
 import { Vue, Component } from "vue-property-decorator";
-import { CreateElement } from 'vue';
 
 @Component({
-  name: 'app-enter'
+  name: "page1",
+  template: require("./index.html")
 })
-export default class APPEnter extends Vue {
+export default class Page1Component extends Vue {
 
   /** 常量 */
   // @Prop / @Inject / @State / @Getter ...
@@ -13,36 +13,28 @@ export default class APPEnter extends Vue {
   /** 变量 */
   // @PropSync / @Ref ...
 
+  // 构造器
+  constructor() {
+    super();
+  }
 
   /** 私用方法 */
   // @Watch / @Emit ...
-  render(h: CreateElement) {
-    return h('div', { attrs: { id: 'q-app' } }, [h('router-link', {
-      props:{
-        to:"/page1"
-      },
-      domProps: {
-        innerHTML: 'page1'
-      },
-    }),h('router-link', {
-      props:{
-        to:"/page2"
-      },
-      domProps: {
-        innerHTML: 'page2'
-      },
-    }),h('router-view')])
-  }
+
 
   /** 公共方法 */
   // @Provide / @Action / @Mutation ...
 
-
+  demo1() {
+    console.log("这里是page1")
+  }
   // 生命构造之前
   beforeCreate() { }
 
   // 生命构造时
-  created() { }
+  created() {
+    this.demo1()
+  }
 
   // 生命挂载之前
   beforeMount() { }
@@ -55,7 +47,4 @@ export default class APPEnter extends Vue {
 
   // 生命销毁时
   destroyed() { }
-
-  // 构造器
-  constructor() { super() }
 }

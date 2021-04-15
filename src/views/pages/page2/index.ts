@@ -1,10 +1,10 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component({
-  name: "test",
+  name: "page2",
   template: require("./index.html")
 })
-export default class TestComponent extends Vue {
+export default class Page2Component extends Vue {
 
   /** 常量 */
   // @Prop / @Inject / @State / @Getter ...

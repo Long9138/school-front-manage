@@ -21,9 +21,14 @@ const routes: RouteConfig[] = [
     component: () => import('@/views/pages/login')
   },
   {
-    path: '/test',
-    name:'test',
-    component: () => import('@/views/pages/test')
+    path: '/page1',
+    name:'page1',
+    component: () => import('@/views/pages/page1')
+  },
+  {
+    path: '/page2',
+    name:'page2',
+    component: () => import('@/views/pages/page2')
   }
   // {
   //   path: '*',

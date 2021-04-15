@@ -7,7 +7,9 @@ import { connect } from "http2";
   name: 'login',
   template: require("./index.html"),
   components: {
-    LayoutHeader: () => import('src/layouts/header')
+    LayoutHeader: () => import('src/layouts/header'),
+    Page1:()=> import('../page1'),
+    Page2:()=> import('../page2')
   },
   filters: {
     
